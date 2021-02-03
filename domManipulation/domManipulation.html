@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Manipulation Exercise</title>
+    </head>
+    <body>
+        <h1>
+            DOM Manipulation
+        </h1>
+        <div id="container"></div>
+
+        <script>
+            const container = document.querySelector('#container');
+
+            const content = document.createElement('div');
+            content.classList.add('content');
+            content.textContent = 'This is the glorious text-content!';
+
+            container.appendChild(content);
+
+            const para = document.createElement('p');
+            para.setAttribute('style', 'color: red');
+            para.textContent = 'Hey I\'m red!';
+
+            container.appendChild(para);
+
+            const heading3 = document.createElement('h3');
+            heading3.setAttribute('style', 'color: blue');
+            heading3.textContent = 'I\'m a blue h3!';
+
+            container.appendChild(heading3);
+
+            const myDiv = document.createElement('div');
+            myDiv.setAttribute('style', 'border: 1px solid black; background-color: pink');
+            
+            const heading1 = document.createElement('h1');
+            heading1.textContent = 'I\'m in a div';
+            myDiv.appendChild(heading1);
+
+            const divPara = document.createElement('p');
+            divPara.textContent = 'ME TOO!';
+            myDiv.appendChild(divPara);
+
+            container.appendChild(myDiv);
+            
+        </script>
+    </body>
+</html>
