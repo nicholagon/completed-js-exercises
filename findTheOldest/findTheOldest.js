@@ -1,9 +1,7 @@
 let findTheOldest = function(persons) {
     const oldestSort = persons.sort((a, b) => {
-        let ageOfA, ageOfB;
-
-        ageOfA = getAge(a.yearOfBirth, a.yearOfDeath);
-        ageOfB = getAge(b.yearOfBirth, b.yearOfDeath);
+        let ageOfA = getAge(a.yearOfBirth, a.yearOfDeath);
+        let ageOfB = getAge(b.yearOfBirth, b.yearOfDeath);
         
         if(ageOfA > ageOfB) return -1;
         if(ageOfA < ageOfB) return 1;        
