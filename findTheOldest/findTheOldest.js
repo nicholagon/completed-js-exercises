@@ -2,15 +2,8 @@ let findTheOldest = function(persons) {
     const oldestSort = persons.sort((a, b) => {
         let ageOfA, ageOfB;
 
-        if(!a.yearOfDeath)
-           ageOfA = getAge(a.yearOfBirth, new Date().getFullYear());
-        else
-            ageOfA = getAge(a.yearOfBirth, a.yearOfDeath);
-
-        if(!b.yearOfDeath)
-            ageOfB = getAge(b.yearOfBirth, new Date().getFullYear());
-        else
-            ageOfB = getAge(b.yearOfBirth, b.yearOfDeath);
+        ageOfA = getAge(a.yearOfBirth, a.yearOfDeath);
+        ageOfB = getAge(b.yearOfBirth, b.yearOfDeath);
         
         if(ageOfA > ageOfB) return -1;
         if(ageOfA < ageOfB) return 1;        
@@ -20,6 +13,8 @@ let findTheOldest = function(persons) {
 }
 
 function getAge(startYear, endYear) {
+    if(!endYear)
+        return new Date().getFullYear() - startYear;
     return endYear - startYear;
 }
 
